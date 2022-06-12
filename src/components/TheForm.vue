@@ -10,7 +10,7 @@
     </div>
     <div class="form-control">
       <label for="referrer">How did you hear about us?</label>
-      <select id="referrer" name="referrer">
+      <select id="referrer" name="referrer" v-model="refferer">
         <option value="google">Google</option>
         <option value="wom">Word of mouth</option>
         <option value="newspaper">Newspaper</option>
@@ -57,13 +57,18 @@ export default {
   data() {
     return {
       username: '',
-      userAge: null
+      userAge: null,
+      refferer: 'wom'
     };
   },
   methods: {
     submitForm(){
       console.log(`Username: ${this.username}`);
       console.log(`UserAge: ${this.userAge}`);
+      console.log(`Refferer: ${this.refferer}`);
+      this.username = ''
+      this.userAge = null
+      this.refferer = "wom"
     }
   }
 };
