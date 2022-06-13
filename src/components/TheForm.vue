@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="form-control">
-      <rating-control-vue></rating-control-vue>
+      <rating-control-vue v-model="rating"></rating-control-vue>
     </div>
     <div class="form-control">
       <input
@@ -123,6 +123,7 @@ export default {
       how: null,
       confirm: false,
       userNameValidity: 'Pending',
+      rating: null,
     };
   },
   methods: {
@@ -139,6 +140,9 @@ export default {
       this.how = null;
       console.log(`confirm: ${this.confirm}`);
       this.confirm = false;
+      console.log('Rating');
+      console.log(this.rating);
+      this.rating = null;
     },
     validateUserName() {
       if (this.username === '') {
